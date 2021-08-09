@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Article from '../components/Article';
+import '../components/News.css';
 
 export default function News() {
     const [articles, setArticles] = useState([]);
@@ -20,6 +21,7 @@ export default function News() {
 
     return (
         <div className="News">
+            <h4 className="news-header">News</h4>
 
             <div className="articles">
                 {(articles != null) ? articles.map((article, index) => <Article key={index} article={article.data} />) : ''}
