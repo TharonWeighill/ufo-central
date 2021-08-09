@@ -14,6 +14,8 @@ const App = () => {
     return (
         <div>
             <Header />
+            <Videos />
+            <News />
         </div>
     );
 };
