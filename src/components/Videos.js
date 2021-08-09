@@ -1,4 +1,9 @@
-const Videos = () => {
-    return <div>Videos</div>;
-};
-export default Videos;
+import React from 'react';
+
+export default function Videos() {
+    return (
+        <div>
+
+        </div>
+    );
+}
