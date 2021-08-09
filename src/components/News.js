@@ -20,11 +20,9 @@ export default function News() {
 
     return (
         <div className="News">
-            <header className="News-Header">
-                <input class="subreddit_input" onChange={e => setSubreddit(e.target.value)} value={subreddit} />
-            </header>
+
             <div className="articles">
-                {(articels != null) ? articles.map((article, index) => <Article key={index} article={articel.data} />) : ''}
+                {(articles != null) ? articles.map((article, index) => <Article key={index} article={article.data} />) : ''}
 
             </div>
 
