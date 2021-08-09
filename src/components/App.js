@@ -7,20 +7,13 @@ import NewUser from "../components/NewUser";
 import Sightings from "../components/Sightings";
 import Videos from "../components/Videos";
 import NewUserForm from "../components/NewUserForm";
+import Header from "../components/Header";
 
 
 const App = () => {
     return (
         <div>
-            <NewUserForm />
-            <Login />
-            <About />
-            <Map />
-            <News />
-            <NewSighting />
-            <NewUser />
-            <Sightings />
-            <Videos />
+            <Header />
         </div>
     );
 };

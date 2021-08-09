@@ -1,0 +1,7 @@
+.header {
+    font-family: "Lucida Console", Lucida , sans-serif;
+    color: gray;
+    text-align: center;
+    border: 3px solid rgb(18, 241, 18);
+    background-image: url('https://scx1.b-cdn.net/csz/news/800a/2018/milkyway.jpg');
+}
