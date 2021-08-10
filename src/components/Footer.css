@@ -1,19 +1,15 @@
-.footer-container {
-    
-    
-}
-
-
-
 .footer {
     font-family: "Lucida Console", Lucida , sans-serif;
-    color: honeydew;
+    color: gray;
     text-align: center;
-    border: 3px solid rgb(19, 163, 19);
-    background-image: url('https://scx1.b-cdn.net/csz/news/800a/2018/milkyway.jpg');
+    border: 3px solid rgb(247, 248, 247);
+   
     position: fixed;
   left: 0;
-  bottom: 0;
-  width: 100%
-
+  bottom: -1.8%;
+  width: 110%;
+  background: linear-gradient(90deg, rgb(64, 63, 70) 0%, rgb(4, 33, 70) 100%);
+  color: white;
+  text-align: center;
+ 
 }
