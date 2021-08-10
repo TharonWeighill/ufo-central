@@ -18,6 +18,7 @@ const App = () => {
             <Videos />
             <News />
             <Footer />
+            <Map />
         </div>
     );
 };

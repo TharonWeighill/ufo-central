@@ -25,7 +25,7 @@ export default function News() {
             <div className="news-scoll-bg">
                 <div className="news-scroll-div">
                     <div className="news-scroll-object"></div>
-                    <i class="fab fa-reddit-alien fa-3x">r/UFOs</i>
+                    <i class="fab fa-reddit-alien fa-3x">  r/UFOs</i>
 
                     <div className="articles">
                         {(articles != null) ? articles.map((article, index) => <Article key={index} article={article.data} />) : ''}
@@ -33,6 +33,8 @@ export default function News() {
                     </div>
                 </div>
             </div>
+
+
         </div >
     );
 }

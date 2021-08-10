@@ -2,13 +2,13 @@
   font-family: "Lucida Console", Lucida , sans-serif;
   color: gray;
   text-align: center;
-  border: 3px solid honeydew;
+  border: 3px solid, blanchedalmond;
   position: fixed;
   left: 0;
-  bottom: -1.8%;
+  bottom: -2%;
   width: 100%;
   background: linear-gradient(90deg, rgb(64, 63, 70) 0%, rgb(4, 33, 70) 100%);
-  color:honeydew;
+  color: blanchedalmond;
   text-align: center;
   text-size-adjust: large;
  
