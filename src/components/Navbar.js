@@ -7,8 +7,7 @@ export class Navbar extends Component {
     render() {
         return (
             <nav className="NavbarItems">
-                <h1 className="navbar-logo">UFO CENTRAL<i class="fas fa-satellite-dish fa-2x"></i>
-                </h1>
+                <h1 className="navbar-logo">UF<i class="fas fa-satellite-dish "></i> CENTRAL </h1>
                 <ul>
                     {MenuItems.map((item, index) => {
                         return (

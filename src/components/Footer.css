@@ -1,15 +1,15 @@
 .footer {
-    font-family: "Lucida Console", Lucida , sans-serif;
-    color: gray;
-    text-align: center;
-    border: 3px solid rgb(247, 248, 247);
-   
-    position: fixed;
+  font-family: "Lucida Console", Lucida , sans-serif;
+  color: gray;
+  text-align: center;
+  border: 3px solid honeydew;
+  position: fixed;
   left: 0;
   bottom: -1.8%;
-  width: 110%;
+  width: 100%;
   background: linear-gradient(90deg, rgb(64, 63, 70) 0%, rgb(4, 33, 70) 100%);
-  color: white;
+  color:honeydew;
   text-align: center;
+  text-size-adjust: large;
  
 }

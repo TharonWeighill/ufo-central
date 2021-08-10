@@ -6,8 +6,8 @@ export default function Footer() {
     return (
         <div>
             <div className="footer-container">
-                <h1 className='footer'>UFO CENTRAL</h1>
+                <h1 className='footer'>UF<i class="fas fa-satellite-dish"></i> CENTRAL</h1>
             </div>
-        </div>
+        </div >
     );
 }
