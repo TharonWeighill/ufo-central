@@ -8,12 +8,14 @@ import Sightings from "../components/Sightings";
 import Videos from "../components/Videos";
 import NewUserForm from "../components/NewUserForm";
 import Header from "../components/Header";
+import Navbar from "../components/Navbar";
 
 
 const App = () => {
     return (
         <div>
-            <Header />
+            <Navbar />
+            {/* <Header /> */}
             <Videos />
             <News />
         </div>

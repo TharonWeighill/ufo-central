@@ -20,8 +20,9 @@ export default function News() {
     }, [subreddit]);
 
     return (
+
         <div className="News">
-            <h4 className="news-header">News</h4>
+            <i class="fab fa-reddit-alien fa-3x">  r/UFOs</i>
 
             <div className="articles">
                 {(articles != null) ? articles.map((article, index) => <Article key={index} article={article.data} />) : ''}

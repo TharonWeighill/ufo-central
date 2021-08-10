@@ -13,7 +13,8 @@ export default function Videos() {
     };
     return (
         <div>
-            <h4 className="video-title"> Videos </h4>
+            <i class="fab fa-youtube fa-5x"></i>
+
             <div className="videos">
                 <YouTube videoId="64s8ujoydRM" opts={opts} />
                 <YouTube videoId="1D9WcrJWpNk" opts={opts} />
