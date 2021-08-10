@@ -3,6 +3,7 @@ import { MenuItems } from './MenuItems';
 import "../components/Navbar.css";
 
 export class Navbar extends Component {
+
     render() {
         return (
             <nav className="NavbarItems">

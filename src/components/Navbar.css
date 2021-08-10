@@ -7,9 +7,18 @@
     font-size: large;
     color: green;
     font-family: "Lucida Console", Lucida , sans-serif;
+    overflow: hidden;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
 }
 
 .navbar-logo {
     color: blanchedalmond;
-    
+
+}
+
+
+.nav-links {
+    color: blanchedalmond;
 }

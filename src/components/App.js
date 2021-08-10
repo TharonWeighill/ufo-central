@@ -7,7 +7,7 @@ import NewUser from "../components/NewUser";
 import Sightings from "../components/Sightings";
 import Videos from "../components/Videos";
 import NewUserForm from "../components/NewUserForm";
-import Header from "../components/Header";
+import Footer from "./Footer";
 import Navbar from "../components/Navbar";
 
 
@@ -15,9 +15,9 @@ const App = () => {
     return (
         <div>
             <Navbar />
-            {/* <Header /> */}
             <Videos />
             <News />
+            <Footer />
         </div>
     );
 };
