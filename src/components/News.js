@@ -22,13 +22,17 @@ export default function News() {
     return (
 
         <div className="News">
-            <i class="fab fa-reddit-alien fa-3x">  r/UFOs</i>
+            <div className="news-scoll-bg">
+                <div className="news-scroll-div">
+                    <div className="news-scroll-object"></div>
+                    <i class="fab fa-reddit-alien fa-3x">r/UFOs</i>
 
-            <div className="articles">
-                {(articles != null) ? articles.map((article, index) => <Article key={index} article={article.data} />) : ''}
+                    <div className="articles">
+                        {(articles != null) ? articles.map((article, index) => <Article key={index} article={article.data} />) : ''}
 
+                    </div>
+                </div>
             </div>
-
         </div >
     );
 }

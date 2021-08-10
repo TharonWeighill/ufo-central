@@ -9,9 +9,6 @@ export class Navbar extends Component {
             <nav className="NavbarItems">
                 <h1 className="navbar-logo">UFO CENTRAL<i class="fas fa-satellite-dish fa-2x"></i>
                 </h1>
-                <div className="menu-icon">
-
-                </div>
                 <ul>
                     {MenuItems.map((item, index) => {
                         return (
