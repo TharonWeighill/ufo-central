@@ -1,21 +1,23 @@
-import { SET_ERROR, SET_ARTICLES } from "../constants/ufoNews";
+import axios from 'axios';
 
-export const getUfoArticles = () => {
-    return (dispatch) => {
-        return fetch("https://www.reddit.com/r/UFOs.json").then(resp => resp.json())
-            .then((resp) => {
-                dispatch({
-                    type: SET_ARTICLES,
-                    payload: resp.data.children
-                });
-            })
-            .catch(error => {
-                dispatch({
-                    type: SET_ERROR,
-                    payload: error.message
-                });
-                console.error(error);
-            });
 
-    };
+const CREATE_USER = 'CREATE_USER';
+const CREATE_USER_ERROR = 'CREATE_USER_ERROR';
+
+const createUser = newUser => async (dispatch) => {
+    try {
+        dispatch({ type: CREATE_USER, ...newUser });
+        const response = await axios({
+            method: 'POST',
+            url: 'http://[::1]:3000/users',
+            data: { user: newUser },
+            crossdomain: true,
+        });
+        const { token } = response.data;
+        localStorage.setItem('jwt', token);
+    } catch {
+        dispatch({ type: CREATE_USER_ERROR });
+    }
 };
+export { createUser };
+

@@ -6,10 +6,6 @@ import thunk from 'redux-thunk';
 import rootReducer from './reducers/index';
 import { Provider } from 'react-redux';
 
-window.YTConfig = {
-    host: 'https://www.youtube.com'
-};
-
 // react redux-thunk
 const store = createStore(
     rootReducer,

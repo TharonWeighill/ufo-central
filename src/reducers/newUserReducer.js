@@ -1,24 +1,28 @@
-import { SET_ERROR, SET_ARTICLES } from "../constants/ufoNews";
 
 const initialState = {
-    user: '',
-    email: '',
-    password: ''
-};
-
-export default function newUserReducer(state = initialState, action) {
-    switch (action.type) {
-        case SET_ERROR:
-            return {
-                ...state,
-                error: "Something went wrong when fecthing the UFO articles!"
-            };
-        case SET_ARTICLES:
-            return {
-                ...state,
-                articles: action.payload
-            };
-        default:
-            return state;
+    isLogin: false,
+    user: {
+        name: '',
+        email: '',
+        password: '',
     }
-}
+};
+const authReducer = (state = initialState, action) => {
+    switch (action.type) {
+        case 'CREATE_USER': return {
+            ...state.user,
+            isLogin: true,
+            user: {
+                username: action.username,
+                email: action.email,
+                password: action.password,
+                picture: action.picture,
+            },
+        };
+        case 'CREATE_USER_ERROR': return {
+            isLogin: false,
+        };
+        default: return state;
+    }
+};
+export default authReducer;
