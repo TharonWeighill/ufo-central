@@ -2,12 +2,6 @@
     float: right;
 }
 
-a:link {
-    color: honeydew;
-    
-}
-
-
 .news-scroll-gn{
     width: 400px;
     margin: 10% auto;
@@ -16,7 +10,7 @@ a:link {
 .news-scroll-div{
 
     overflow: hidden;
-    overflow-y: scroll;
+    overflow-x: scroll;
     height: 1050px;
     width: 300px;
     overflow-y: auto;
@@ -24,3 +18,10 @@ a:link {
     border-radius: 5px;
     margin: 1 auto;
 }
+
+.News a {
+    color: aliceblue;
+}    
+.News a:hover {
+    color: gray;
+}    

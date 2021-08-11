@@ -4,26 +4,28 @@ height: 60px;
 display: flex;
 justify-content: center;
 align-items: center;
-font-size: large;
+font-size: x-small;
 color: rgb(126, 126, 129);
 font-family: "Lucida Console", Lucida , sans-serif;
 overflow: hidden;
 position: fixed; /* Set the navbar to fixed position */
 top: 0; /* Position the navbar at the top of the page */
-width: 100%; /* Full width */
-
-
+width: 100%; 
 }
-
-.navbar-logo {
-    color: blanchedalmond;
-
+.NavbarItems a {
+        color: aliceblue;
+}    
+.NavbarItems a:hover {
+        color: gray;
+}    
+ .NavbarItems a:link {
+        font-family: "Lucida Console", Lucida , sans-serif;
+        text-decoration: none;
+        list-style-type: none;
+        font-size: medium;
+        display: inline-table;
+        margin: 0 auto -10px 120px;
+               
 }
-
-
-.nav-links {
-    color: blanchedalmond;
-    position: center;
-    font-size: small;
     
-}
+    

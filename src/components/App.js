@@ -1,4 +1,4 @@
-// import Login from "../components/Login";
+import Login from "../components/Login";
 import About from "../components/About";
 // import Map from "../components/Map";
 import News from "../components/News";
@@ -18,8 +18,9 @@ const App = () => {
             <div>
                 <Navbar />
                 <Switch>
-                    <Route path="/about" exact component={About} />
+                    <Route path="/login" exact component={Login} />
                     <Route path="/signup" exact component={NewUser} />
+                    <Route path="/about" exact component={About} />
                 </Switch>
                 <Videos />
                 <News />

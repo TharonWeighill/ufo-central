@@ -36,22 +36,19 @@ class NewUser extends Component {
         const {
             name, email, password,
         } = this.state;
-        const { newUser, user } = this.props;
+        const { newUser } = this.props;
 
         await newUser({
             name, email, password,
         });
 
-        if (user.isLogin === true) {
-            const { history } = this.props;
-            history.push('/');
-        } else {
-            this.setState(
-                {
-                    message: 'The Truth is here',
-                },
-            );
-        }
+
+        this.setState(
+            {
+                message: 'The Truth is here',
+            },
+        );
+
     };
 
     render() {
