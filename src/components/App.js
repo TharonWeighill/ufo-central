@@ -1,6 +1,6 @@
 // import Login from "../components/Login";
 import About from "../components/About";
-import Map from "../components/Map";
+// import Map from "../components/Map";
 import News from "../components/News";
 // import NewSighting from "../components/NewSighting";
 import NewUser from "../components/NewUser";
@@ -24,8 +24,6 @@ const App = () => {
                 <Videos />
                 <News />
                 <Footer />
-                <Map />
-                <NewUser />
             </div>
         </Router>
     );
