@@ -16,7 +16,7 @@ export default function Navbar() {
                 <Link to="/newsighting">
                     <li> Report A Sighting </li>
                 </Link>
-                <Link to="/newuser">
+                <Link to="/signup">
                     <li> Create Account </li>
                 </Link>
                 <Link to="/logout">
