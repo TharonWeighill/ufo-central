@@ -1,5 +1,5 @@
 // import Login from "../components/Login";
-// import About from "../components/About";
+import About from "../components/About";
 import Map from "../components/Map";
 import News from "../components/News";
 // import NewSighting from "../components/NewSighting";
@@ -9,18 +9,25 @@ import Videos from "../components/Videos";
 // import NewUserForm from "../components/NewUserForm";
 import Footer from "./Footer";
 import Navbar from "../components/Navbar";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 
 const App = () => {
     return (
-        <div>
-            <Navbar />
-            <Videos />
-            <News />
-            <Footer />
-            <Map />
-            <NewUser />
-        </div>
+        <Router>
+            <div>
+                <Navbar />
+                <Switch>
+                    <Route path="/about" exact component={About} />
+                    <Route path="/signup" exact component={NewUser} />
+                </Switch>
+                <Videos />
+                <News />
+                <Footer />
+                <Map />
+                <NewUser />
+            </div>
+        </Router>
     );
 };
-export default App;
+export default App;;

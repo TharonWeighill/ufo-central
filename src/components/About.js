@@ -3,10 +3,7 @@ import React from 'react';
 export default function About() {
     return (
         <div>
-            <p>
-                The Truth is out there
-            </p>
-
+            <h1>THE TRUTH IS HERE</h1>
         </div>
     );
 }

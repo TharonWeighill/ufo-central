@@ -1,17 +1,17 @@
 export const MenuItems = [
     {
         title: 'Login',
-        url: '#',
+        url: '/login',
         cName: 'nav-links'
     },
     {
         title: 'Create Account',
-        url: '#',
+        url: '/signup',
         cName: 'nav-links'
     },
     {
         title: 'About Us',
-        url: '#',
+        url: '/about',
         cName: 'nav-links'
     },
 
