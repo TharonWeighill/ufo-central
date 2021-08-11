@@ -19,6 +19,7 @@ const App = () => {
             <News />
             <Footer />
             <Map />
+            <NewUser />
         </div>
     );
 };
