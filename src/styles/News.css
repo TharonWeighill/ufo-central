@@ -8,15 +8,17 @@
 }
 
 .news-scroll-div{
-
-    overflow: hidden;
+    
+    font-size: x-large;
     overflow-x: scroll;
     height: 1050px;
     width: 300px;
-    overflow-y: auto;
+    overflow-x: auto;
     background-image: url('https://scx1.b-cdn.net/csz/news/800a/2018/milkyway.jpg');
-    border-radius: 5px;
+    border-radius: 1px;
     margin: 1 auto;
+    direction: rtl;
+    
 }
 
 .News a {
