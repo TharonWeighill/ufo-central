@@ -1,19 +1,21 @@
+import { SET_ERROR, SET_ARTICLES } from "../constants/ufoNews";
+
 const initialState = {
-    ufoArticles: [],
-    ufoArticlesError: null
+    articles: [],
+    error: null
 };
 
 export default function ufoNewsReducer(state = initialState, action) {
     switch (action.type) {
-        case "SET_UFO_ARTICLES_ERROR":
+        case SET_ERROR:
             return {
                 ...state,
-                ufoArticlesError: action.payload
+                error: "Something went wrong when fecthing the UFO articles!"
             };
-        case "SET_UFO_ARTICLES":
+        case SET_ARTICLES:
             return {
                 ...state,
-                ufoArticles: action.payload
+                articles: action.payload
             };
         default:
             return state;

@@ -1,19 +1,9 @@
-import React, { Component } from 'react';
-import NewUserForm from './NewUserForm';
+import React from 'react';
 
-export class NewUser extends Component {
-    state = {
-        visible: true
-    };
-    render() {
-        return (
-            <div>
-                <div className="newuser">
-                    {this.state.visible ? <NewUserForm /> : true}
-                </div>
+export default function NewUser() {
+    return (
+        <div>
 
-            </div>
-        );
-    }
+        </div>
+    );
 }
-export default NewUser;
