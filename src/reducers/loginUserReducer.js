@@ -2,6 +2,7 @@
 const initialState = {
     isLogin: false,
     user: {
+        name: '',
         email: '',
         password: '',
     }

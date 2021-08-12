@@ -1,16 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { createUser } from '../actions/newUser';
+import { loginUser } from '../actions/login';
 import '../styles/Login.css';
 
 class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            name: '',
             email: '',
             password: '',
         };
     }
+
+    handleUsernameChange = (e) => {
+        this.setState({
+            name: e.target.value,
+        });
+    };
 
     handleEmailChange = (e) => {
         this.setState({
@@ -27,12 +34,12 @@ class Login extends Component {
     onSubmitHandler = async (e) => {
         e.preventDefault();
         const {
-            email, password,
+            name, email, password,
         } = this.state;
-        const { user } = this.props;
+        const { newUser } = this.props;
 
-        await user({
-            email, password,
+        await newUser({
+            name, email, password,
         });
 
 
@@ -47,12 +54,13 @@ class Login extends Component {
     render() {
         const { message } = this.state;
         return (
-            <div className="login">
+            <div className="signup">
                 <form onSubmit={this.onSubmitHandler} >
                     <h1>{message}</h1>
+                    <input onChange={this.handleUsernameChange} type="text" placeholder="NAME" required />
                     <input onChange={this.handleEmailChange} type="email" placeholder="Email" required />
                     <input onChange={this.handlePasswordChange} type="password" placeholder="Password" required />
-                    <button type="submit">Login</button>
+                    <button type="submit">Create Account</button>
                 </form>
             </div>
         );
@@ -62,7 +70,6 @@ const mapStateToProps = state => ({
     user: state.user,
 });
 const mapDispatchToProps = dispatch => ({
-    loginUser: estate => dispatch(createUser(estate)),
+    newUser: estate => dispatch(loginUser(estate)),
 });
-
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
