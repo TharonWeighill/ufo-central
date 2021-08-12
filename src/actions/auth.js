@@ -16,9 +16,9 @@ const getToken = () => {
     }
 };
 
-export const newUser = (credentials) => {
+export const signupUser = (credentials) => {
     return (dispatch) => {
-        return fetch("http://localhost:3001/signup", {
+        return fetch("http://localhost:3000/signup", {
             method: "POST",
             headers: {
                 Accept: "application/json",
@@ -45,7 +45,7 @@ export const newUser = (credentials) => {
 
 export const loginUser = (credentials) => {
     return (dispatch) => {
-      return fetch("http://localhost:3001/login", {
+      return fetch("http://localhost:3000/login", {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -72,7 +72,7 @@ export const loginUser = (credentials) => {
   
   export const logoutUser = () => {
     return (dispatch) => {
-        return fetch("http://localhost:3001/logout", {
+        return fetch("http://localhost:3000/logout", {
             method: "DELETE",
             headers: {
                 Accept: "application/json",
@@ -94,7 +94,7 @@ export const loginUser = (credentials) => {
 
 export const checkAuth = () => {
     return (dispatch) => {
-      return fetch("http://localhost:3001/current_user", {
+      return fetch("http://localhost:3000/current_user", {
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",

@@ -9,7 +9,7 @@ const createUser = newUser => async (dispatch) => {
         dispatch({ type: CREATE_USER, ...newUser });
         const response = await axios({
             method: 'POST',
-            url: 'http://localhost:3000/users',
+            url: 'http://localhost:3001/signup',
             data: { user: newUser },
             crossdomain: true,
         });

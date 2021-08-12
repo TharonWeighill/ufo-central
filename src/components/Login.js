@@ -1,75 +1,78 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { loginUser } from '../actions/login';
 import '../styles/Login.css';
+import React from "react";
+import { connect } from "react-redux";
+import { loginUser } from "../actions/index";
 
-class Login extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            name: '',
-            email: '',
-            password: '',
-        };
-    }
+class Login extends React.Component {
+  state = {
+    email: "",
+    password: "",
+    error: false
+  };
 
-    handleUsernameChange = (e) => {
-        this.setState({
-            name: e.target.value,
-        });
-    };
+  handleChange = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  };
 
-    handleEmailChange = (e) => {
-        this.setState({
-            email: e.target.value,
-        });
-    };
+  handleSubmit = (event) => {
+    event.preventDefault();
+    const { email, password } = this.state;
+    this.props
+      .dispatchLoginUser({ email, password })
+      .then(() => this.props.history.push("/"))
+      .catch(() => this.setState({ error: true }));
+  };
 
-    handlePasswordChange = (e) => {
-        this.setState({
-            password: e.target.value,
-        });
-    };
-
-    onSubmitHandler = async (e) => {
-        e.preventDefault();
-        const {
-            name, email, password,
-        } = this.state;
-        const { newUser } = this.props;
-
-        await newUser({
-            name, email, password,
-        });
-
-
-        this.setState(
-            {
-                message: 'The Truth is here',
-            },
-        );
-
-    };
-
-    render() {
-        const { message } = this.state;
-        return (
-            <div className="signup">
-                <form onSubmit={this.onSubmitHandler} >
-                    <h1>{message}</h1>
-                    <input onChange={this.handleUsernameChange} type="text" placeholder="NAME" required />
-                    <input onChange={this.handleEmailChange} type="email" placeholder="Email" required />
-                    <input onChange={this.handlePasswordChange} type="password" placeholder="Password" required />
-                    <button type="submit">Create Account</button>
-                </form>
-            </div>
-        );
-    }
+  render() {
+    return (
+      <form
+        onSubmit={this.handleSubmit}
+        className='w-11/12 max-w-2xl mx-auto mt-8'
+      >
+        <h1 className='font-bold text-3xl'>Log In</h1>
+        <p className="h-8 text-red-400">{this.state.error && "Invalid email or password"}</p>
+        <fieldset>
+          <label className='block uppercase mb-2' htmlFor='email'>
+            Email:
+          </label>
+          <input
+            type='text'
+            name='email'
+            id='email'
+            className='w-full border-2 focus:outline-none focus:ring-2 p-4 mb-4'
+            onChange={this.handleChange}
+            value={this.state.email}
+          />
+        </fieldset>
+        <fieldset>
+          <label className='block uppercase mb-2' htmlFor='password'>
+            Password:
+          </label>
+          <input
+            type='password'
+            name='password'
+            id='password'
+            className="w-full border-2 focus:outline-none focus:ring-2 p-4 mb-4"
+            onChange={this.handleChange}
+            value={this.state.password}
+          />
+        </fieldset>
+        <input
+          className='w-full text-center uppercase p-4 bg-blue-300 cursor-pointer mt-4'
+          type='submit'
+          value='Log In'
+        />
+      </form>
+    );
+  }
 }
-const mapStateToProps = state => ({
-    user: state.user,
-});
-const mapDispatchToProps = dispatch => ({
-    newUser: estate => dispatch(loginUser(estate)),
-});
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    dispatchLoginUser: (credentials) => dispatch(loginUser(credentials))
+  };
+};
+
+export default connect(null, mapDispatchToProps)(Login);

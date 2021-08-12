@@ -9,7 +9,7 @@ const loginUser = loginUser => async (dispatch) => {
         dispatch({ type: LOGIN_USER, ...loginUser });
         const response = await axios({
             method: 'GET',
-            url: 'http://localhost:3000/users',
+            url: 'http://localhost:3001/signup',
             data: { user: loginUser },
             crossdomain: true,
         });
