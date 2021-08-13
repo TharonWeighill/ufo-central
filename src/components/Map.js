@@ -1,25 +1,32 @@
 import React from 'react';
-import GoogleMapReact from 'google-map-react';
-
+import { GoogleMap, LoadScript } from '@react-google-maps/api';
 import "../styles/Map.css";
 
-const mapStyles = {
-  width: '100%',
-  height: '100%'
+const containerStyle = {
+    width: '1350px',
+    height: '960px'
 };
 
-export default function SightingsMap() {
+const center = {
+    lat: 0,
+    lng: 0
+};
+
+export default function Map() {
     return (
-        <div style={{ height: '100vh', width: '100%' }}>
-        <GoogleMapReact
-          bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY }}
-          defaultCenter={{
-            lat: 0,
-            lng: 0
-          }}
-          defaultZoom={11}
+        <LoadScript
+            googleMapsApiKey="AIzaSyAIZ8UwE7nfYBEz0xejCqdQfggaOL5afW0"
         >
-        </GoogleMapReact>
-      </div>
+            <div className="map-container">
+                <GoogleMap
+                    mapContainerStyle={containerStyle}
+                    center={center}
+                    zoom={3}
+                >
+                    { /* Child components, such as markers, info windows, etc. */}
+                    <></>
+                </GoogleMap>
+            </div>
+        </LoadScript>
     );
 }

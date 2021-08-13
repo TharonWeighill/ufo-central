@@ -1,24 +1,22 @@
-body{ 
-    margin: 0;
-    padding: 0;
-    background: gray;
+body {
+  margin: 0;
+  padding: 0;
+  background: gray;
 }
 
-.scroll-gn{
-    background: green;
-    width: 400px;
-    margin: 10% auto;
+.scroll-gn {
+  background: green;
+  width: 400px;
+  margin: 10% auto;
 }
 
-.scroll-div{
-    background-image: url('https://scx1.b-cdn.net/csz/news/800a/2018/milkyway.jpg');
-    position: fixed;
-    width: 300px;
-    height: 1000px;
-    top: 5.6%;
+.scroll-div {
+  background-image: url("https://scx1.b-cdn.net/csz/news/800a/2018/milkyway.jpg");
+  position: fixed;
+  width: 340px;
+  height: 1000px;
+  top: 5.6%;
 
-
-    overflow: hidden;
-    overflow-y: scroll;
-
+  overflow: hidden;
+  overflow-y: scroll;
 }

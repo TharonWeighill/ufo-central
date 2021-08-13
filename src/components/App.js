@@ -23,8 +23,8 @@ const App = () => {
                     <Route path="/about" exact component={About} />
                 </Switch>
                 <Videos />
-                <Map />
                 <News />
+                <Map />
                 <Footer />
             </div>
         </Router>
