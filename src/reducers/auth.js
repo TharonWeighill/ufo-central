@@ -1,4 +1,4 @@
-import { AUTHENTICATED, NOT_AUTHENTICATED } from "../actions/actionTypes";
+import { AUTHENTICATED, NOT_AUTHENTICATED } from "../constants/users";
 
 const initialState = {
   authChecked: false,
@@ -9,7 +9,9 @@ const initialState = {
 export default function authReducer(state = initialState, action) {
   switch (action.type) {
     case AUTHENTICATED:
+      console.log(action.payload)
       return {
+        ...state, 
         authChecked: true,
         loggedIn: true,
         currentUser: action.payload,

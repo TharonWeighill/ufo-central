@@ -1,8 +1,12 @@
 import React from 'react';
 import "../styles/Navbar.css";
 import { Link } from "react-router-dom";
+import { connect } from 'react-redux'
 
-export default function Navbar() {
+
+
+const Navbar =  (props) => {
+    console.log(props)
     return (
         <nav className="NavbarItems">
             <h1><i className="fas fa-satellite-dish fas fa-3x"></i></h1>
@@ -19,7 +23,7 @@ export default function Navbar() {
                 <Link to="/signup">
                     <li> Create Account </li>
                 </Link>
-                <Link to="/logout">
+                    <Link to="/logout">
                     <li> Logout </li>
                 </Link>
                 <Link to="/about">
@@ -31,3 +35,8 @@ export default function Navbar() {
 }
 
 
+function mapStateToProps(state) {
+    return {state }
+}
+
+export default connect(mapStateToProps)(Navbar);

@@ -1,7 +1,5 @@
-const AUTHENTICATED = 'AUTHENTICATED'
-const NOT_AUTHENTICATED = 'NOT_AUTHENTICATED'
-const GET_SIGHTINGS = 'GET_SIGHTINGS';
-const SET_SIGHTINGS_ERROR = 'SET_SIGHTINGS_ERROR';
+import { SET_SIGHTINGS_ERROR } from "../constants/sightings"
+import { AUTHENTICATED, NOT_AUTHENTICATED } from "../constants/users";
 
 const setToken = (token) => {
     localStorage.setItem("token", token);

@@ -1,5 +1,4 @@
-const AUTHENTICATED = 'AUTHENTICATED'
-const NOT_AUTHENTICATED = 'NOT_AUTHENTICATED'
+import { AUTHENTICATED, NOT_AUTHENTICATED } from "../constants/users";
 
 
 const setToken = (token) => {
@@ -18,7 +17,7 @@ const getToken = () => {
 
 export const signupUser = (credentials) => {
     return (dispatch) => {
-        return fetch("http://localhost:3000/signup", {
+        return fetch("http://localhost:3001/signup", {
             method: "POST",
             headers: {
                 Accept: "application/json",
@@ -45,7 +44,7 @@ export const signupUser = (credentials) => {
 
 export const loginUser = (credentials) => {
     return (dispatch) => {
-      return fetch("http://localhost:3000/login", {
+      return fetch("http://localhost:3001/login", {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -72,7 +71,7 @@ export const loginUser = (credentials) => {
   
   export const logoutUser = () => {
     return (dispatch) => {
-        return fetch("http://localhost:3000/logout", {
+        return fetch("http://localhost:3001/logout", {
             method: "DELETE",
             headers: {
                 Accept: "application/json",
@@ -94,7 +93,7 @@ export const loginUser = (credentials) => {
 
 export const checkAuth = () => {
     return (dispatch) => {
-      return fetch("http://localhost:3000/current_user", {
+      return fetch("http://localhost:3001/current_user", {
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
