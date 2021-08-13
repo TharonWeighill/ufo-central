@@ -1,16 +1,16 @@
 .login {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    
-    font-size: 20px;
-    background: linear-gradient(90deg, rgb(64, 63, 70) 0%, rgb(4, 33, 70) 100%);
-    border: blanchedalmond;
-    padding: 5px;
-    z-index: 100;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+
+  font-size: 20px;
+  background: linear-gradient(90deg, rgb(64, 63, 70) 0%, rgb(4, 33, 70) 100%);
+  border: blanchedalmond;
+  padding: 5px;
+  z-index: 100;
 }

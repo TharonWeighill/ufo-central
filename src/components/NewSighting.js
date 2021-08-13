@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { createSighting } from '../actions/newSighting';
+import { newSighting } from '../actions/sightings';
 import '../styles/NewSighting.css';
 
 class NewSighting extends Component {
@@ -103,7 +103,7 @@ const mapStateToProps = state => ({
     sighting: state.sighting,
 });
 const mapDispatchToProps = dispatch => ({
-    newSighting: estate => dispatch(createSighting(estate)),
+    newSighting: estate => dispatch(newSighting(estate)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(NewSighting);

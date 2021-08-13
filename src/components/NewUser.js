@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { createUser } from '../actions/newUser';
+import { signupUser } from '../actions/auth';
 import '../styles/NewUser.css';
 
 class NewUser extends Component {
@@ -70,7 +70,7 @@ const mapStateToProps = state => ({
     user: state.user,
 });
 const mapDispatchToProps = dispatch => ({
-    newUser: estate => dispatch(createUser(estate)),
+    newUser: estate => dispatch(signupUser(estate)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(NewUser);
