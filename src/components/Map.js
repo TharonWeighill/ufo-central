@@ -1,19 +1,25 @@
 import React from 'react';
-// import { GoogleMap, LoadScript } from '@react-google-maps/api';
+import GoogleMapReact from 'google-map-react';
+
 import "../styles/Map.css";
 
-// const containerStyle = {
-//     width: '899px',
-//     height: '980px'
-// };
+const mapStyles = {
+  width: '100%',
+  height: '100%'
+};
 
-// const center = {
-//     lat: -3.745,
-//     lng: -38.523
-// };
-
-export default function Map() {
+export default function SightingsMap() {
     return (
-        <div></div>
+        <div style={{ height: '100vh', width: '100%' }}>
+        <GoogleMapReact
+          bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY }}
+          defaultCenter={{
+            lat: 0,
+            lng: 0
+          }}
+          defaultZoom={11}
+        >
+        </GoogleMapReact>
+      </div>
     );
 }

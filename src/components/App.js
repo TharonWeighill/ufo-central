@@ -1,6 +1,6 @@
 import Login from "../components/Login";
 import About from "../components/About";
-// import Map from "../components/Map";
+import Map from "../components/Map";
 import News from "../components/News";
 // import NewSighting from "../components/NewSighting";
 import NewUser from "../components/NewUser";
@@ -23,6 +23,7 @@ const App = () => {
                     <Route path="/about" exact component={About} />
                 </Switch>
                 <Videos />
+                <Map />
                 <News />
                 <Footer />
             </div>
