@@ -29,9 +29,9 @@ class Login extends React.Component {
     return (
       <div className="login">
         <form onSubmit={this.handleSubmit} >
-          <input onChange={this.handleUsernameChange} type="text" placeholder="NAME" required />
-          <input onChange={this.handleEmailChange} type="email" placeholder="Email" required />
-          <input onChange={this.handlePasswordChange} type="password" placeholder="Password" required />
+          <input onChange={this.handleChange} type="text" placeholder="NAME" required />
+          <input onChange={this.handleChange} type="email" placeholder="Email" required />
+          <input onChange={this.handleChange} type="password" placeholder="Password" required />
           <button type="submit">Login</button>
         </form>
       </div>
