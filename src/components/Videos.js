@@ -13,6 +13,7 @@ export default function Videos() {
     };
     return (
         <div>
+            <div className="videos">
             <div className="scoll-bg">
                 <div className="scroll-div">
                     <div className="scroll-object">
@@ -26,9 +27,9 @@ export default function Videos() {
                         <YouTube videoId="KC8qr-U9ehU" opts={opts} />
                         <YouTube videoId="LDhM4U5DgPI" opts={opts} />
                         <YouTube videoId="iTvm_xDVaDI" opts={opts} />
-
                     </div>
                 </div>
+            </div>
             </div>
         </div >
     );

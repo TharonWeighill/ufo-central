@@ -1,7 +1,7 @@
 import '../styles/Login.css';
 import React from "react";
 import { connect } from "react-redux";
-import { loginUser } from "../actions/index";
+import { loginUser } from "../actions/auth";
 
 class Login extends React.Component {
   state = {
@@ -28,22 +28,24 @@ class Login extends React.Component {
   render() {
     return (
       <div className="login">
-                <form onSubmit={this.handleSubmit} >
-            
-                    <input onChange={this.handleUsernameChange} type="text" placeholder="NAME" required />
-                    <input onChange={this.handleEmailChange} type="email" placeholder="Email" required />
-                    <input onChange={this.handlePasswordChange} type="password" placeholder="Password" required />
-                    <button type="submit">Login</button>
-                </form>
-            </div>
+        <form onSubmit={this.handleSubmit} >
+          <input onChange={this.handleUsernameChange} type="text" placeholder="NAME" required />
+          <input onChange={this.handleEmailChange} type="email" placeholder="Email" required />
+          <input onChange={this.handlePasswordChange} type="password" placeholder="Password" required />
+          <button type="submit">Login</button>
+        </form>
+      </div>
     );
-  }
+  };
 }
+
+
 
 const mapDispatchToProps = (dispatch) => {
   return {
     dispatchLoginUser: (credentials) => dispatch(loginUser(credentials))
   };
 };
+
 
 export default connect(null, mapDispatchToProps)(Login);

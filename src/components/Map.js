@@ -21,9 +21,7 @@ export default function Map() {
                 <GoogleMap
                     mapContainerStyle={containerStyle}
                     center={center}
-                    zoom={3}
-                >
-                    { /* Child components, such as markers, info windows, etc. */}
+                    zoom={3}>
                     <></>
                 </GoogleMap>
             </div>
