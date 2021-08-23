@@ -4,73 +4,72 @@ import { signupUser } from '../actions/auth';
 import '../styles/NewUser.css';
 
 class NewUser extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            name: '',
-            email: '',
-            password: '',
-        };
-    }
-
-    handleUsernameChange = (e) => {
+    state = {
+        email: "",
+        password: "",
+        errors: {status: {message: ""}}
+    };
+    
+    handleChange = (event) => {
         this.setState({
-            name: e.target.value,
+          [event.target.name]: event.target.value
         });
     };
 
-    handleEmailChange = (e) => {
-        this.setState({
-            email: e.target.value,
-        });
-    };
-
-    handlePasswordChange = (e) => {
-        this.setState({
-            password: e.target.value,
-        });
-    };
-
-    onSubmitHandler = async (e) => {
-        e.preventDefault();
-        const {
-            name, email, password,
-        } = this.state;
-        const { newUser } = this.props;
-
-        await newUser({
-            name, email, password,
-        });
-
-
-        this.setState(
-            {
-                message: 'The Truth is here',
-            },
-        );
-
+    handleSubmit = (event) => {
+        event.preventDefault();
+        const { email, password } = this.state;
+        this.props
+            .signupUser({ email, password })
+            .then(() => this.props.history.push("/"))
+            .catch((errors) => this.setState({ errors }));
     };
 
     render() {
-        const { message } = this.state;
         return (
-            <div className="signup">
-                <form onSubmit={this.onSubmitHandler} >
-                    <h1>{message}</h1>
-                    <input onChange={this.handleUsernameChange} type="text" placeholder="NAME" required />
-                    <input onChange={this.handleEmailChange} type="email" placeholder="Email" required />
-                    <input onChange={this.handlePasswordChange} type="password" placeholder="Password" required />
-                    <button type="submit">Create Account</button>
-                </form>
-            </div>
+          <form onSubmit={this.handleSubmit} className='signup'>
+            <h1 className='font-bold text-3xl mb-2'>Sign Up</h1>
+            <p className='h-8 text-red-400'>{this.state.errors.status.message}</p>
+            <fieldset>
+              <label className='block uppercase mb-2' htmlFor='email'>
+                Email:
+              </label>
+              <input
+                type='text'
+                name='email'
+                id='email'
+                className='w-full border-2 focus:outline-none focus:ring-2 p-4 mb-4'
+                onChange={this.handleChange}
+                value={this.state.email}
+              />
+            </fieldset>
+            <fieldset>
+              <label className='block uppercase mb-2' htmlFor='password'>
+                Password:
+              </label>
+              <input
+                type='password'
+                name='password'
+                id='password'
+                className='w-full border-2 focus:outline-none focus:ring-2 p-4 mb-4'
+                onChange={this.handleChange}
+                value={this.state.password}
+              />
+            </fieldset>
+            <input
+              className='w-full text-center uppercase p-4 bg-blue-300 cursor-pointer mt-4'
+              type='submit'
+              value='Sign Up'
+            />
+          </form>
         );
+      }
     }
-}
-const mapStateToProps = state => ({
-    user: state.user,
-});
-const mapDispatchToProps = dispatch => ({
-    newUser: estate => dispatch(signupUser(estate)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(NewUser);
+    
+    const mapDispatchToProps = (dispatch) => {
+      return {
+        signupUser: (credentials) => dispatch(signupUser(credentials))
+      };
+    };
+    
+    export default connect(null, mapDispatchToProps)(NewUser);

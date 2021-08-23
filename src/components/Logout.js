@@ -10,18 +10,9 @@ const Logout = ({ logoutUser }) => {
     logoutUser().then(() => history.push("/"));
   };
 
-  const link = {
-    width: '100px',
-    height: '64px',
-    padding: '12px',
-    margin: '1em 0 2em',
-    background: 'blue',
-    textDecoration: 'none',
-    color: 'white',
-    }
 
   return (
-    <a href="" style={link} onClick={handleClick}>Logout</a>
+    <a href="/logout" onClick={handleClick}>Logout</a>
   );
 };
 

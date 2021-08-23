@@ -3,6 +3,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { loginUser } from "../actions/auth";
 
+
 class Login extends React.Component {
   state = {
     email: "",
@@ -27,25 +28,49 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div className="login">
-        <form onSubmit={this.handleSubmit} >
-          <input onChange={this.handleChange} type="text" placeholder="NAME" required />
-          <input onChange={this.handleChange} type="email" placeholder="Email" required />
-          <input onChange={this.handleChange} type="password" placeholder="Password" required />
-          <button type="submit">Login</button>
-        </form>
-      </div>
+      <form onSubmit={this.handleSubmit} className='login'>
+        <h1 className='font-bold text-3xl'>Log In</h1>
+        <p className="h-8 text-red-400">{this.state.error && "Invalid email or password"}</p>
+        <fieldset>
+          <label className='block uppercase mb-2' htmlFor='email'>
+            Email:
+          </label>
+          <input
+            type='text'
+            name='email'
+            id='email'
+            className='w-full border-2 focus:outline-none focus:ring-2 p-4 mb-4'
+            onChange={this.handleChange}
+            value={this.state.email}
+          />
+        </fieldset>
+        <fieldset>
+          <label className='block uppercase mb-2' htmlFor='password'>
+            Password:
+          </label>
+          <input
+            type='password'
+            name='password'
+            id='password'
+            className="w-full border-2 focus:outline-none focus:ring-2 p-4 mb-4"
+            onChange={this.handleChange}
+            value={this.state.password}
+          />
+        </fieldset>
+        <input
+          className='w-full text-center uppercase p-4 bg-blue-300 cursor-pointer mt-4'
+          type='submit'
+          value='Log In'
+        />
+      </form>
     );
-  };
+  }
 }
-
-
 
 const mapDispatchToProps = (dispatch) => {
   return {
     dispatchLoginUser: (credentials) => dispatch(loginUser(credentials))
   };
 };
-
 
 export default connect(null, mapDispatchToProps)(Login);

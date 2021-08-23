@@ -11,15 +11,16 @@ class Navbar extends React.Component {
   }
 
     renderAuthLinks() {
-        const { authChecked, loggedIn, currentUser } = this.props;
+        const { authChecked, loggedIn } = this.props;
         if (authChecked) {
             return loggedIn ? (
                 <>
                     <div className="NavbarItems">
                         <ul className="navlinks">
-                            <Link to='/protected' exact >Protected</Link>           
-                            <Link to="/newsighting"> <li> Report A Sighting </li></Link>
+                            <Link to="/" exact >Home</Link>            
+                            <Link to="/newsighting">Report A Sighting</Link>
                             <Logout />
+                            <Link to="/about" exact >About</Link> 
                         </ul>
                     </div>
                 </>
