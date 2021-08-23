@@ -1,10 +1,5 @@
 import { SET_SIGHTINGS_ERROR } from "../constants/sightings"
-import { AUTHENTICATED, NOT_AUTHENTICATED } from "../constants/users";
 
-const setToken = (token) => {
-    localStorage.setItem("token", token);
-    localStorage.setItem("lastLoginTime", new Date(Date.now()).getTime());
-};
 
 export const newSighting = (credentials) => {
     return (dispatch) => {
@@ -14,28 +9,15 @@ export const newSighting = (credentials) => {
                 Accept: "application/json",
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ user: credentials })
-        }).then((res) => {
-            if (res.ok) {
-                setToken(res.headers.get("Authorization"));
-                return res
-                    .json()
-                    .then((userJson) =>
-                        dispatch({ type: AUTHENTICATED, payload: userJson })
-                    );
-            } else {
-                return res.json().then((errors) => {
-                    dispatch({ type: NOT_AUTHENTICATED });
-                    return Promise.reject(errors);
-                });
-            }
-        });
+            body: JSON.stringify({ sightings: credentials })
+        })
     };
 };
 
 export const getSightings = () => {
     return (dispatch) => {
-        return fetch("http://localhost:3001/sightings")
+        return fetch("http://localhost:3001/sightings", {
+            headers: { "Content-Type" : "application/json" }})
         .then((response) => response.json())
         .then((data) => {
             console.log(data);

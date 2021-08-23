@@ -12,12 +12,12 @@ export default function News() {
     }, [dispatch]);
 
     return (
-        <div className="News">
-            <div className="news-scoll-bg">
-                <div className="news-scroll-div">
-                    <div className="news-scroll-object"></div>
-                    <i className="fab fa-reddit-alien fa-3x">  r/UFOs</i>
-                    <div className="articles">
+        <div className='News'>
+            <div className='news-scoll-bg'>
+                <div className='news-scroll-div'>
+                    <div className='news-scroll-object'></div>
+                    <i className='fab fa-reddit-alien fa-3x'>  r/UFOs</i>
+                    <div className='articles'>
                         {ufoNews.error ? (
                             <p>{ufoNews.error}</p>
                         ) : (

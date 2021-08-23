@@ -1,13 +1,13 @@
 import '../styles/Login.css';
-import React from "react";
-import { connect } from "react-redux";
-import { loginUser } from "../actions/auth";
+import React from 'react';
+import { connect } from 'react-redux';
+import { loginUser } from '../actions/auth';
 
 
 class Login extends React.Component {
   state = {
-    email: "",
-    password: "",
+    email: '',
+    password: '',
     error: false
   };
 
@@ -22,7 +22,7 @@ class Login extends React.Component {
     const { email, password } = this.state;
     this.props
       .dispatchLoginUser({ email, password })
-      .then(() => this.props.history.push("/"))
+      .then(() => this.props.history.push('/'))
       .catch(() => this.setState({ error: true }));
   };
 
@@ -30,7 +30,7 @@ class Login extends React.Component {
     return (
       <form onSubmit={this.handleSubmit} className='login'>
         <h1 className='font-bold text-3xl'>Log In</h1>
-        <p className="h-8 text-red-400">{this.state.error && "Invalid email or password"}</p>
+        <p className='h-8 text-red-400'>{this.state.error && 'Invalid email or password'}</p>
         <fieldset>
           <label className='block uppercase mb-2' htmlFor='email'>
             Email:
@@ -52,7 +52,7 @@ class Login extends React.Component {
             type='password'
             name='password'
             id='password'
-            className="w-full border-2 focus:outline-none focus:ring-2 p-4 mb-4"
+            className='w-full border-2 focus:outline-none focus:ring-2 p-4 mb-4'
             onChange={this.handleChange}
             value={this.state.password}
           />

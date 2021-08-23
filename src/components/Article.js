@@ -5,7 +5,7 @@ export default function Article(props) {
 
     return (
         <article>
-            <a href={base_url + props.article.permalink} target="_blank" rel="noreferrer">
+            <a href={base_url + props.article.permalink} target='_blank' rel='noreferrer'>
                 <h3>{props.article.title}</h3>
             </a>
         </article>
