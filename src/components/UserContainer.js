@@ -6,8 +6,8 @@ export class UserContainer extends Component {
     };
 
     componentDidMount() {
-        console.log("componentDidMount");
-        fetch("http://localhost:3000/users")
+        console.log('componentDidMount');
+        fetch('http://localhost:3000/users')
             .then(resp => resp.json())
             .then(json => {
                 this.setState({ users: json });

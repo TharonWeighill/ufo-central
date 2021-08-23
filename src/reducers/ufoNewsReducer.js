@@ -1,4 +1,4 @@
-import { SET_ERROR, SET_ARTICLES } from "../constants/ufoNews";
+import { SET_ERROR, SET_ARTICLES } from '../constants/ufoNews';
 
 const initialState = {
     articles: [],
@@ -10,7 +10,7 @@ export default function ufoNewsReducer(state = initialState, action) {
         case SET_ERROR:
             return {
                 ...state,
-                error: "Something went wrong when fecthing the UFO articles!"
+                error: 'Something went wrong when fecthing the UFO articles!'
             };
         case SET_ARTICLES:
             return {

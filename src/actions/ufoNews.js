@@ -1,8 +1,8 @@
-import { SET_ERROR, SET_ARTICLES } from "../constants/ufoNews";
+import { SET_ERROR, SET_ARTICLES } from '../constants/ufoNews';
 
 export const getUfoArticles = () => {
     return (dispatch) => {
-        return fetch("https://www.reddit.com/r/UFOs.json").then(resp => resp.json())
+        return fetch('https://www.reddit.com/r/UFOs.json').then(resp => resp.json())
             .then((resp) => {
                 dispatch({
                     type: SET_ARTICLES,

@@ -1,32 +1,32 @@
-import { AUTHENTICATED, NOT_AUTHENTICATED } from "../constants/users";
+import { AUTHENTICATED, NOT_AUTHENTICATED } from '../constants/users';
 
 
 const setToken = (token) => {
-  localStorage.setItem("token", token);
-  localStorage.setItem("lastLoginTime", new Date(Date.now()).getTime());
+  localStorage.setItem('token', token);
+  localStorage.setItem('lastLoginTime', new Date(Date.now()).getTime());
 };
   
 const getToken = () => {
   const now = new Date(Date.now()).getTime();
   const timeAllowed = 1000 * 60 * 30;
-  const timeSinceLastLogin = now - localStorage.getItem("lastLoginTime");
+  const timeSinceLastLogin = now - localStorage.getItem('lastLoginTime');
   if (timeSinceLastLogin < timeAllowed) {
-    return localStorage.getItem("token");
+    return localStorage.getItem('token');
   }
 };
 
 export const signupUser = (credentials) => {
   return (dispatch) => {
-      return fetch("http://localhost:3001/signup", {
-          method: "POST",
+      return fetch('http://localhost:3001/signup', {
+          method: 'POST',
           headers: {
-              Accept: "application/json",
-              "Content-Type": "application/json"
+              Accept: 'application/json',
+              'Content-Type': 'application/json'
           },
           body: JSON.stringify({ user: credentials })
       }).then((res) => {
           if (res.ok) {
-              setToken(res.headers.get("Authorization"));
+              setToken(res.headers.get('Authorization'));
               return res
                   .json()
                   .then((userJson) =>
@@ -45,16 +45,16 @@ export const signupUser = (credentials) => {
 
 export const loginUser = (credentials) => {
   return (dispatch) => {
-    return fetch("http://localhost:3001/login", {
-      method: "POST",
+    return fetch('http://localhost:3001/login', {
+      method: 'POST',
       headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({ user: credentials }),
     }).then((res) => {
       if (res.ok) {
-        setToken(res.headers.get("Authorization"));
+        setToken(res.headers.get('Authorization'));
       return res
         .json()
         .then((userJson) =>
@@ -72,11 +72,11 @@ export const loginUser = (credentials) => {
   
 export const logoutUser = () => {
   return (dispatch) => {
-  return fetch("http://localhost:3001/logout", {
-    method: "DELETE",
+  return fetch('http://localhost:3001/logout', {
+    method: 'DELETE',
     headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
       Authorization: getToken(),
     },
   }).then((res) => {
@@ -94,10 +94,10 @@ export const logoutUser = () => {
 
 export const checkAuth = () => {
   return (dispatch) => {
-  return fetch("http://localhost:3001/current_user", {
+  return fetch('http://localhost:3001/current_user', {
     headers: {
-       Accept: "application/json",
-      "Content-Type": "application/json",
+       Accept: 'application/json',
+      'Content-Type': 'application/json',
        Authorization: getToken()
     }
   }).then((res) => {

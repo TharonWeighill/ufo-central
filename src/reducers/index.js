@@ -1,5 +1,5 @@
-import { combineReducers } from "redux";
-import ufoNewsReducer from "./ufoNewsReducer";
+import { combineReducers } from 'redux';
+import ufoNewsReducer from './ufoNewsReducer';
 import auth from './auth'
 
 const rootReducer = combineReducers({
