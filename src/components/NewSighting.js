@@ -4,18 +4,13 @@ import { newSighting } from '../actions/sightings';
 import '../styles/NewSighting.css';
 
 class NewSighting extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            city: '',
-            state: '',
-            country: '',
-            comments: '',
-            date_posted: '',
-            latitude: '',
-            longitutde: '',
-
-        };
+    state = {
+        city: '',
+        comments: '',
+        date_posted: '',
+        latitude: '',
+        longitude: '',
+        errors: {status: {message: ""}}
     }
 
     handleChange = (event) => {
@@ -23,50 +18,52 @@ class NewSighting extends Component {
           [event.target.name]: event.target.value
         });
     };
-
-    onSubmitHandler = async (e) => {
-        e.preventDefault();
-        const {
-            city, state, country, comments, date_posted, latitude, longitutde,
-        } = this.state;
-        
-        const { newSighting } = this.props;
-
-        await newSighting({
-            city, state, country, comments, date_posted, latitude, longitutde,
-        });
-
-        this.setState(
-            {
-                message: 'The Truth has been reported',
-            },
-        );
+    
+    handleSubmit = (event) => {
+        event.preventDefault();
+        const {  city, comments, date_posted, latitude, longitude  } = this.state;
+        this.props
+        .newSighting({ city, comments, date_posted, latitude, longitude })
+        .then(() => this.props.history.push("/"))
+        .catch((errors) => this.setState({ errors }));
     };
 
     render() {
-        const { message } = this.state;
         return (
             <div className='newsighting'>
-                <form onSubmit={this.onSubmitHandler} >
-                    <h1>{message}</h1>
-                    <input onChange={this.handleChange} type='text' placeholder='City' id ='city' value={this.state.city} />
-                    <input onChange={this.handleChange} type='text' placeholder='State' value={this.state.state}/>
-                    <input onChange={this.handleChange} type='text' placeholder='Country' value={this.state.country} />
-                    <input onChange={this.handleChange} type='text' placeholder='Comments about Sighting' value={this.state.comments} />
-                    <input onChange={this.handleChange} type='text' placeholder='Date of Sighting' value={this.state.date_posted} />
-                    <input onChange={this.handleChange} type='text' placeholder='Lat' value={this.state.latitude} />
-                    <input onChange={this.handleChange} type='text' placeholder='Long' value={this.state.longitutde} />
-                    <button type='submit'>Report Sighting!</button>
+                <form onSubmit={this.handleSubmit} >
+                    <fieldset>
+                        <label className='block uppercase mb-2' htmlFor='city'> City: </label>
+                        <input type='text' name='city' id='city' onChange={this.handleChange} value={this.state.city} />
+                    </fieldset>
+                    <fieldset>
+                        <label className='block uppercase mb-2' htmlFor='city'> Comments: </label>
+                        <input type='text' name='comments' id='comments' onChange={this.handleChange} value={this.state.email} />
+                    </fieldset>
+                    <fieldset>
+                        <label className='block uppercase mb-2' htmlFor='date_posted'> Date Witnessed: </label>
+                        <input type='text' name='date_posted' id='date_posted' onChange={this.handleChange} value={this.state.date_posted} />
+                    </fieldset>
+                    <fieldset>
+                        <label className='block uppercase mb-2' htmlFor='latitude'> Latitude: </label>
+                        <input type='text' name='latitude' id='latitude' onChange={this.handleChange} value={this.state.latitude} />
+                    </fieldset>
+                    <fieldset>
+                        <label className='block uppercase mb-2' htmlFor='longitude'> Longitude: </label>
+                        <input type='text' name='longitude' id='longitude' onChange={this.handleChange} value={this.state.longitude} />
+                    </fieldset>
+                    <input className='w-full text-center uppercase p-4 bg-blue-300 cursor-pointer mt-4' type='submit' value='Report Sighting!' />
                 </form>
             </div>
         );
-    }
+    };
 }
-const mapStateToProps = state => ({
-    sighting: state.sighting,
-});
-const mapDispatchToProps = dispatch => ({
-    newSighting: estate => dispatch(newSighting(estate)),
-});
 
-export default connect(mapStateToProps, mapDispatchToProps)(NewSighting);
+ 
+const mapDispatchToProps = (dispatch) => {
+    return {
+      newSighting: (credentials) => dispatch(newSighting(credentials))
+    };
+  };
+      
+  export default connect(null, mapDispatchToProps)(NewSighting);
