@@ -17,10 +17,10 @@ class Navbar extends React.Component {
                 <>
                     <div className='NavbarItems'>
                         <ul className='navlinks'>
-                            <Link to='/' exact >Home</Link>            
+                            <Link to='/' >Home</Link>            
                             <Link to='/newsighting'>Report A Sighting</Link>
                             <Logout />
-                            <Link to='/about' exact >About</Link> 
+                            <Link to='/about'  >About</Link> 
                         </ul>
                     </div>
                 </>
@@ -28,10 +28,10 @@ class Navbar extends React.Component {
                 <>
                     <nav className='NavbarItems'>
                         <ul className='navlinks'>
-                            <Link to='/' exact >Home</Link>    
-                            <Link to='/login' exact >Login</Link>
-                            <Link to='/signup' exact >Signup</Link>
-                            <Link to='/about' exact >About</Link> 
+                            <Link to='/'  >Home</Link>    
+                            <Link to='/login'  >Login</Link>
+                            <Link to='/signup'  >Signup</Link>
+                            <Link to='/about'  >About</Link> 
                         </ul>
                     </nav>
                 </>

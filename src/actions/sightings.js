@@ -1,4 +1,4 @@
-import { SET_SIGHTINGS_ERROR } from '../constants/sightings'
+import { SET_SIGHTINGS_ERROR, SET_SIGHTINGS } from '../constants/sightings'
 
 
 export const newSighting = (credentials) => {
@@ -20,7 +20,11 @@ export const getSightings = () => {
             headers: { 'Content-Type' : 'application/json' }})
         .then((response) => response.json())
         .then((data) => {
-            console.log(data);
+            console.log(data)
+          dispatch({
+              type: SET_SIGHTINGS,
+              payload: data
+          })
         })
         .catch((error) => {
             dispatch({

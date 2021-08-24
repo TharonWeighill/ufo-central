@@ -1,15 +1,18 @@
-const AUTHENTICATED = 'AUTHENTICATED'
-const NOT_AUTHENTICATED = 'NOT_AUTHENTICATED'
-const GET_SIGHTINGS = 'GET_SIGHTINGS';
-const SET_SIGHTINGS_ERROR = 'SET_SIGHTINGS_ERROR';
+import { SET_SIGHTINGS_ERROR, SET_SIGHTINGS } from '../constants/sightings'
 
 const intialState = {
     sightings: [],
     error: null,
 };
 
-export default sightings = (state = intialState, action)  => {
+export default function sightings (state = intialState, action) {
     switch(action.type) {
+        case SET_SIGHTINGS:
+            console.log("xxx", action.payload)
+            return {
+                ...state, 
+                sightings: action.payload
+            }
         case SET_SIGHTINGS_ERROR:
             return {
                 ...state,

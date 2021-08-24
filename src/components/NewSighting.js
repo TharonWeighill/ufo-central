@@ -29,6 +29,7 @@ class NewSighting extends Component {
     };
 
     render() {
+        
         return (
             <div className='newsighting'>
                 <form onSubmit={this.handleSubmit} >
@@ -66,4 +67,4 @@ const mapDispatchToProps = (dispatch) => {
     };
   };
       
-  export default connect(null, mapDispatchToProps)(NewSighting);
+export default connect(null, mapDispatchToProps)(NewSighting);
