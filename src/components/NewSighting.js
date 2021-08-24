@@ -28,8 +28,8 @@ class NewSighting extends Component {
         .catch((errors) => this.setState({ errors }));
     };
 
+    
     render() {
-        
         return (
             <div className='newsighting'>
                 <form onSubmit={this.handleSubmit} >
@@ -38,8 +38,8 @@ class NewSighting extends Component {
                         <input type='text' name='city' id='city' onChange={this.handleChange} value={this.state.city} />
                     </fieldset>
                     <fieldset>
-                        <label className='block uppercase mb-2' htmlFor='city'> Comments: </label>
-                        <input type='text' name='comments' id='comments' onChange={this.handleChange} value={this.state.email} />
+                        <label className='block uppercase mb-2' htmlFor='comments'> Comments: </label>
+                        <input type='text' name='comments' id='comments' onChange={this.handleChange} value={this.state.comments} />
                     </fieldset>
                     <fieldset>
                         <label className='block uppercase mb-2' htmlFor='date_posted'> Date Witnessed: </label>
@@ -47,11 +47,11 @@ class NewSighting extends Component {
                     </fieldset>
                     <fieldset>
                         <label className='block uppercase mb-2' htmlFor='latitude'> Latitude: </label>
-                        <input type='text' name='latitude' id='latitude' onChange={this.handleChange} value={this.state.latitude} />
+                        <input type='float' name='latitude' id='latitude' onChange={this.handleChange} value={this.state.latitude} />
                     </fieldset>
                     <fieldset>
                         <label className='block uppercase mb-2' htmlFor='longitude'> Longitude: </label>
-                        <input type='text' name='longitude' id='longitude' onChange={this.handleChange} value={this.state.longitude} />
+                        <input type='float' name='longitude' id='longitude' onChange={this.handleChange} value={this.state.longitude} />
                     </fieldset>
                     <input className='w-full text-center uppercase p-4 bg-blue-300 cursor-pointer mt-4' type='submit' value='Report Sighting!' />
                 </form>
