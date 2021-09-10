@@ -1,0 +1,7 @@
+.challenge-box {
+  position: absolute;
+  background-color: coral;
+  width: 50vw;
+  height: 50vh;
+  z-index: 100;
+}

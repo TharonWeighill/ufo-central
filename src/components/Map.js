@@ -17,6 +17,7 @@ const center = {
 };
 
 export default function Map() {
+   
     const [selectedSighting, setSelectedSighting] = useState(null);
     
     const sightingsReported = useSelector((state) => {

@@ -1,4 +1,5 @@
 import Login from '../components/Login';
+import Challenge from '../components/Challenge';
 import About from '../components/About';
 import Map from '../components/Map';
 import News from '../components/News';
@@ -16,10 +17,11 @@ const App = () => {
             <div>
                 <Navbar />
                 <Switch>
-                    <Route path='/login' exact component={Login} />
-                    <Route path='/signup' exact component={NewUser} />
-                    <Route path='/about' exact component={About} />
-                    <Route path='/newsighting' exact component={NewSighting} />
+                    <Route path='/login'  component={Login} />
+                    <Route path='/challenge'  component={Challenge} />
+                    <Route path='/signup'  component={NewUser} />
+                    <Route path='/about'  component={About} />
+                    <Route path='/newsighting'  component={NewSighting} />
                 </Switch>
                 <Videos />
                 <News />
