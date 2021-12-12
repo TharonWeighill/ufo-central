@@ -4,8 +4,6 @@ import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/ap
 import '../styles/Map.css';
 import { getSightings } from '../actions/sightings'
 
-
-
 const containerStyle = {
     width: '1350px',
     height: '960px'
@@ -26,29 +24,26 @@ export default function Map() {
         
     })
     
-
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(getSightings());
     }, [dispatch]);
     
     return (
-        <LoadScript
-            googleMapsApiKey='AIzaSyAIZ8UwE7nfYBEz0xejCqdQfggaOL5afW0'
-        >
+        <LoadScript >
             <div className='map-container'>
                 <GoogleMap
                     mapContainerStyle={containerStyle}
                     center={center}
                     zoom={3}
                 >        
-                    {sightingsReported.sightings.map((sighting) => (
-                        <Marker 
-                        key={sighting.id} 
-                        position={{ 
-                            lat: sighting.latitude, 
-                            lng: sighting.longitude 
-                        }}
+                {sightingsReported.sightings.map((sighting) => (
+                    <Marker 
+                    key={sighting.id} 
+                    position={{ 
+                    lat: sighting.latitude, 
+                    lng: sighting.longitude 
+                    }}
                         onClick={() => { 
                             setSelectedSighting(sighting)
                         }}
