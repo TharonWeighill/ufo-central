@@ -1,5 +1,5 @@
 import Login from '../components/Login';
-import Challenge from '../components/Challenge';
+
 import About from '../components/About';
 import Map from '../components/Map';
 import News from '../components/News';
@@ -18,7 +18,6 @@ const App = () => {
                 <Navbar />
                 <Switch>
                     <Route path='/login'  component={Login} />
-                    <Route path='/challenge'  component={Challenge} />
                     <Route path='/signup'  component={NewUser} />
                     <Route path='/about'  component={About} />
                     <Route path='/newsighting'  component={NewSighting} />

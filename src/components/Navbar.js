@@ -28,8 +28,7 @@ class Navbar extends React.Component {
                 <>
                     <nav className='NavbarItems'>
                         <ul className='navlinks'>
-                            <Link to='/'  >Home</Link> 
-                            <Link to='/challenge' >Challenge </Link>    
+                            <Link to='/'  >Home</Link>    
                             <Link to='/login'  >Login</Link>
                             <Link to='/signup'  >Signup</Link>
                             <Link to='/about'  >About</Link> 
